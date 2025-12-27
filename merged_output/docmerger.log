@@ -1,0 +1,6 @@
+2025-12-26 11:51:01,524 INFO merge pass started input_folder=input_docs output_folder=merged_output output_file=merged.docx processed_file=processed.csv
+2025-12-26 11:51:01,552 INFO merge pass finished
+2025-12-26 11:51:01,553 INFO sleeping seconds=300
+2025-12-26 11:56:01,553 INFO merge pass started input_folder=input_docs output_folder=merged_output output_file=merged.docx processed_file=processed.csv
+2025-12-26 11:56:01,583 INFO merge pass finished
+2025-12-26 11:56:01,583 INFO sleeping seconds=300

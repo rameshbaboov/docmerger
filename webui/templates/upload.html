@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Upload .docx to input_docs</h1>
+
+<section class="card">
+  <form method="post" action="/upload" enctype="multipart/form-data" class="form">
+    <input type="file" name="file" accept=".docx" required />
+    <button type="submit">Upload</button>
+  </form>
+  <p class="muted">Note: if a file with the same name already exists, the upload will be skipped.</p>
+</section>
+
+<section class="card">
+  <h2>Current input files</h2>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Name</th><th>Size (bytes)</th><th>Modified (UTC)</th></tr></thead>
+      <tbody>
+      {% for f in input_files %}
+        <tr><td>{{ f.name }}</td><td>{{ f.size_bytes }}</td><td>{{ f.modified_at }}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+{% endblock %}

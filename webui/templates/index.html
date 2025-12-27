@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Dashboard</h1>
+
+<section class="card">
+  <h2>Job status</h2>
+  {% if status.running %}
+    <div class="badge ok">RUNNING</div>
+    <div class="muted">PID: {{ status.pid }} | Started (UTC): {{ status.started_at }} | Interval: {{ status.interval_seconds }} sec</div>
+    <form action="/job/stop" method="post" class="inline">
+      <button type="submit" class="danger">Stop</button>
+    </form>
+  {% else %}
+    <div class="badge warn">STOPPED</div>
+    <div class="muted">Interval: {{ config.interval_seconds }} sec (from WebUI config)</div>
+    <form action="/job/start" method="post" class="inline">
+      <button type="submit">Start</button>
+    </form>
+    <form action="/job/run-once" method="post" class="inline">
+      <button type="submit" class="secondary">Run once</button>
+    </form>
+  {% endif %}
+</section>
+
+<section class="grid">
+  <div class="card">
+    <h2>Input folder</h2>
+    <div class="muted">{{ input_files | length }} file(s)</div>
+    <div class="actions"><a class="link" href="/upload">Upload / view</a></div>
+  </div>
+
+  <div class="card">
+    <h2>Output folder</h2>
+    <div class="muted">{{ output_files | length }} file(s)</div>
+    <div class="actions"><a class="link" href="/outputs">View / download</a></div>
+  </div>
+
+  <div class="card">
+    <h2>Processed (latest)</h2>
+    <div class="muted">Showing up to 200 most recent entries</div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Filename</th><th>Status</th></tr></thead>
+        <tbody>
+          {% for f, s in processed_rows %}
+            <tr><td>{{ f }}</td><td>{{ s }}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Log (tail)</h2>
+  <pre class="pre">{{ log_tail }}</pre>
+</section>
+
+{% endblock %}

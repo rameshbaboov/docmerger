@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>processed.csv</h1>
+
+<section class="card">
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Filename</th><th>Status</th></tr></thead>
+      <tbody>
+      {% for f, s in rows %}
+        <tr><td>{{ f }}</td><td>{{ s }}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+{% endblock %}

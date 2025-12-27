@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Output folder (merged_output)</h1>
+
+<section class="card">
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Name</th><th>Size (bytes)</th><th>Modified (UTC)</th><th>Download</th></tr></thead>
+      <tbody>
+      {% for f in output_files %}
+        <tr>
+          <td>{{ f.name }}</td>
+          <td>{{ f.size_bytes }}</td>
+          <td>{{ f.modified_at }}</td>
+          <td><a class="link" href="/download/output/{{ f.name }}">Download</a></td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+{% endblock %}

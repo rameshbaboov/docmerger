@@ -1,0 +1,21 @@
+
+You are an expert in writing business letters. I will give you a type (e.g., corporate introduction, government client letter, internal announcement, etc.) and a complexity (simple = 75 words, medium = 100 words, complex = 125 words).
+
+For each type provided:
+
+Create 5 sub-scenarios relevant to that type.
+Write one letter per sub-scenario (so 5 letters total).
+
+Each letter should include placeholders for names, job title, industry, email, and phone number. Use a tone that fits the audience: [formal/professional/casual/engaging].Keep letters clear, concise, and professional.
+
+After each letter, provide:
+Commentary (why this works for the audience)
+Tips for adaptation (how to adjust tone or content)
+Improved AI Prompt Starters (5 per sub-scenario, each action-oriented, with clear role, context, word count, tone, and optional variation/commentary). Tell the gpt to have a clear subject line or heading, proper greetings and closing to have Structured body with opening, purpose, supporting details, and call to action,Polished formatting and concise, professional language.
+
+Output format
+Heading 1: Business Letters: [Type]
+Heading 2: Letter X: [Sub-scenario Title]
+Number sections/subsections (1, 1.1, etc.)
+
+Keep all output in Canvas.
